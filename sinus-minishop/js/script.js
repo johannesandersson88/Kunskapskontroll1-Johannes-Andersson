@@ -15,9 +15,10 @@ newButton.style.color = 'white';
 newButton.style.padding = '40px 40px';
 newButton.style.fontSize = '20px';
 newButton.style.cursor = 'pointer';
+newButton.style.marginLeft = '40px';
 
 // Skapas på sidan och i HTML dokumentet. 
-lastProduct.insertAdjacentElement('afterend', newButton)
+lastProduct.insertAdjacentElement('afterend', newButton);
 
 // Eventlistener för interaktion när man klickar på den. Återställer allt till orginalet.  
 
@@ -49,6 +50,9 @@ newButton.addEventListener('click', function () {
     newButtonChange[1].innerText = 'PRESS ME';
     // Knappen i Sektion 1
     newButtonChange[0].innerText = 'PRESS ME';
+
+    // Ta bort listan med storlekar 
+    ul.style.display = 'none';
 
 });
 
@@ -143,6 +147,88 @@ bgChangeButton[2].addEventListener('click', function () {
     newButtonChange[2].style.color = 'black';
 
 })
+
+/* Lägg till en lista */
+
+// Var knappen för att visa listan hamnar
+let newButtonHolder = document.querySelectorAll('article');
+
+// Skapar den nya knappen
+let newButton2 = document.createElement('button');
+
+// Hur den kommer se ut 
+newButton2.innerText = 'Show Sizes';
+newButton2.style.backgroundColor = 'black';
+newButton2.style.color = 'white';
+newButton2.style.padding = '20px 40px';
+newButton2.style.fontSize = '15px';
+newButton2.style.cursor = 'pointer';
+newButton2.style.marginTop = '40px';
+newButton2.style.height = '50%'
+
+// Skapas på sidan och i HTML dokumentet. Efter sista articlen i footern.
+newButtonHolder[5].insertAdjacentElement('afterend', newButton2)
+
+// För att visa listan 
+
+newButton2.addEventListener('click', function () {
+    ul.style.display = 'block';
+});
+
+
+
+// Listan och allt innehåll. 
+
+let ul = document.createElement('ul');
+
+// Listan hamnar till höger om knappen
+newButton2.insertAdjacentElement('afterend', ul);
+
+
+
+// Skapar Header och list element för storlekar
+let h2 = document.createElement('h2');
+let li = document.createElement('li');
+let li1 = document.createElement('li');
+let li2 = document.createElement('li');
+let li3 = document.createElement('li');
+let li4 = document.createElement('li');
+
+// Trycker in allt i UL listan
+ul.appendChild(h2);
+ul.appendChild(li);
+ul.appendChild(li1);
+ul.appendChild(li2);
+ul.appendChild(li3);
+ul.appendChild(li4);
+
+
+// Vad som ska stå på respektive plats
+h2.textContent = 'Size List'
+li.textContent = 'X-Small';
+li1.textContent = 'Small';
+li2.textContent = 'Medium';
+li3.textContent = 'Large';
+li4.textContent = 'X-Large';
+
+// Styling på listan 
+h2.style.fontSize = '22px';
+ul.style.marginRight = '20px';
+ul.style.display = 'none';
+h2.style.borderBottom = '1px solid black';
+li.style.borderBottom = '1px solid black';
+li1.style.borderBottom = '1px solid black';
+li2.style.borderBottom = '1px solid black';
+li3.style.borderBottom = '1px solid black';
+li4.style.borderBottom = '1px solid black';
+
+
+
+
+
+
+
+
 
 
 
