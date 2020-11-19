@@ -1,8 +1,5 @@
 # Kunskapskontroll1-Johannes-Andersson
 
-DOM & Events. 
-
-Readme fil
 
 DOM & Events. 
 
